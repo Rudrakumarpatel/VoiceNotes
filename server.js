@@ -20,15 +20,15 @@ app.use("/api/auth", authRoutes);
 app.use("/api/notes", noteRoutes);
 
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
-// app.use(express.static(path.resolve(__dirname, "frontend", "build")));
+app.use(express.static(path.resolve(__dirname, "frontend", "build")));
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-// });
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+});
 
 // Start Server
 const PORT = 5000;
